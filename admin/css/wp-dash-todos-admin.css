@@ -1,0 +1,69 @@
+#wdt_todo_list.postbox .inside {
+    padding: 0;
+}
+
+.wdt-container {
+    background: #fff;
+    font-family: Arial, sans-serif;
+    width: 100%;
+    overflow: hidden;
+    font-size: 17px;
+}
+.wdt-container .wdt-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+.wdt-container .wdt-header ul {
+    list-style: none;
+    display: flex;
+}
+.wdt-container .wdt-header ul li a {
+    padding: 0 10px;
+    text-decoration: none;
+    color: #333;
+}
+.wdt-container .wdt-content input {
+    width: 100%;
+    height: 50px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 17px;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+}
+.wdt-container .wdt-content ul.wdt-tasks {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.wdt-container .wdt-content ul.wdt-tasks li {
+    padding: 10px 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    aling-items: flex-start;
+    justify-content: space-between;
+}
+.wdt-container .wdt-content ul.wdt-tasks li.completed .wdt-task {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+.wdt-container .wdt-content ul.wdt-tasks li .wdt-task {
+    display: flex;
+    align-items: center;
+}
+.wdt-container .wdt-content ul.wdt-tasks li .wdt-task input[type=checkbox] {
+    width: 15px;
+    height: 15px;
+    margin: 0px 10px;
+}
+.wdt-container .wdt-content ul.wdt-tasks li div.wdt-actions {
+    width: 60px;
+    text-align: center;
+    padding-right: 10px;
+}
+.wdt-container .wdt-content ul.wdt-tasks li div.wdt-actions a {
+    color: #333;
+    padding-right: 10px;
+}
