@@ -70,14 +70,13 @@ class Wp_Dash_Todos {
 		if ( defined( 'WP_DASH_TODOS_VERSION' ) ) {
 			$this->version = WP_DASH_TODOS_VERSION;
 		} else {
-			$this->version = '1.0.0';
+			$this->version = '0.1.0';
 		}
 		$this->plugin_name = 'wp-dash-todos';
 
 		$this->load_dependencies();
 		$this->set_locale();
 		$this->define_admin_hooks();
-		$this->define_public_hooks();
 
 	}
 
@@ -116,12 +115,6 @@ class Wp_Dash_Todos {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wp-dash-todos-admin.php';
 
-		/**
-		 * The class responsible for defining all actions that occur in the public-facing
-		 * side of the site.
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-wp-dash-todos-public.php';
-
 		$this->loader = new Wp_Dash_Todos_Loader();
 
 	}
@@ -158,22 +151,6 @@ class Wp_Dash_Todos {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 		$this->loader->add_action( 'wp_dashboard_setup', $plugin_admin, 'wdt_dashboard_box' );
 		$this->loader->add_action( 'wp_ajax_wdt_save_todos', $plugin_admin, 'wdt_save_todos' );
-
-	}
-
-	/**
-	 * Register all of the hooks related to the public-facing functionality
-	 * of the plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 */
-	private function define_public_hooks() {
-
-		$plugin_public = new Wp_Dash_Todos_Public( $this->get_plugin_name(), $this->get_version() );
-
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 
 	}
 
