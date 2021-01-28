@@ -106,7 +106,7 @@ class Wp_Dash_Todos_Admin {
 	public function wdt_dashboard_box() {
 		global $wp_meta_boxes;
 
-		wp_add_dashboard_widget('wdt_todo_list', __( 'WP Dash Todo\'s', 'wdt' ), [ $this, 'wdt_dashboard_box_content' ] );
+		wp_add_dashboard_widget('wdt_todo_list', __( 'WP Dash Todo\'s', 'wp-dash-todos' ), [ $this, 'wdt_dashboard_box_content' ] );
 	}
 
 	/**
@@ -125,14 +125,14 @@ class Wp_Dash_Todos_Admin {
 	public function wdt_save_todos() {
 		if ( isset( $_POST['action'] ) && $_POST['action'] === 'wdt_save_todos' ) {
 			if (!isset($_POST['todo_items'])) {
-				echo wp_json_encode(['status' => 'failure', 'message' => __( 'todo_items parameter is mandatory.', 'wdt' )]);
+				echo wp_json_encode(['status' => 'failure', 'message' => __( 'todo_items parameter is mandatory.', 'wp-dash-todos' )]);
 				wp_die();
 			}
 
 			$todo_items = str_replace('\\', '', ($_POST['todo_items']));
 			$todo_items = json_decode( $todo_items, true );
-			if (!$todo_items) {
-				echo wp_json_encode(['status' => 'failure', 'message' => __( 'Please send a valid json.', 'wdt' ) ]);
+			if (null === $todo_items) {
+				echo wp_json_encode(['status' => 'failure', 'message' => __( 'Please send a valid json.', 'wp-dash-todos' ) ]);
 				wp_die();
 			}
 

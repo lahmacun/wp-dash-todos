@@ -29,3 +29,8 @@
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }
+
+$users = get_users();
+foreach ( $users as $user ) {
+	delete_user_meta( $user->ID, 'wdt_todos' );
+}

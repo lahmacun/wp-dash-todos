@@ -12,7 +12,7 @@
 			<input type="text" placeholder="Type your task and press enter" class="wdt-entry-input" />
 			<ul class="wdt-tasks">
                 <?php
-                if ( $todos != [] ) {
+                if ( $todos ) {
                     foreach ($todos as $todo) {
                         ?>
                         <li<?php echo $todo['done'] ? ' class="completed"' : null ?>>
