@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== WP Dash Todos ===
 Contributors: zahidefe
 Donate link: https://zahidefe.net
 Tags: dashboard notes, todo
