@@ -14,12 +14,6 @@ Very simple todo list for WP Dashboard
 
 With WP Dash Todos plugin, you can simply add and remove todo list items for yourself in your WordPress Dashboard.
 
-== Installation ==
-
-1. Upload `wp-dash-todos.php` to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. You will see your todo list somewhere in admin dashboard
-
 == Changelog ==
 
 = 0.1.0 =
